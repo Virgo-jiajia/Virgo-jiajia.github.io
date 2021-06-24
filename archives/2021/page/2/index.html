@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>Archives: 2021 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、http的状态码中，499是什么？如何出现499，如何排查跟解决499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：  前端将timeout最大等待时间设置大一些 nginx上配置proxy_ignore_clien">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E9%A2%98/day03/index.html">
+<meta property="og:url" content="http://example.com/archives/2021/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、http的状态码中，499是什么？如何出现499，如何排查跟解决499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：  前端将timeout最大等待时间设置大一些 nginx上配置proxy_ignore_clien">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-15T02:35:21.682Z">
-<meta property="article:modified_time" content="2021-06-07T11:29:44.510Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,163 +150,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-面试题/day03" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-    <div class="article-entry" itemprop="articleBody">
+    
       
-        <h4 id="1、http的状态码中，499是什么？如何出现499，如何排查跟解决"><a href="#1、http的状态码中，499是什么？如何出现499，如何排查跟解决" class="headerlink" title="1、http的状态码中，499是什么？如何出现499，如何排查跟解决"></a>1、http的状态码中，499是什么？如何出现499，如何排查跟解决</h4><p>499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：</p>
-<ul>
-<li>前端将timeout最大等待时间设置大一些</li>
-<li>nginx上配置proxy_ignore_client_abort on;</li>
-</ul>
-<h4 id="2、new操作符都做了什么"><a href="#2、new操作符都做了什么" class="headerlink" title="2、new操作符都做了什么"></a>2、new操作符都做了什么</h4><p>四大步骤：</p>
-<p>1、创建一个空对象，并且 this 变量引用该对象，// lat target = {};</p>
-<p>2、继承了函数的原型。// target.<strong>proto</strong> = func.prototype;</p>
-<p>3、属性和方法被加入到 this 引用的对象中。并执行了该函数func// func.call(target);</p>
-<p>4、新创建的对象由 this 所引用，并且最后隐式的返回 this 。// 如果func.call(target)返回的res是个对象或者function 就返回它</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function new(func) &#123;</span><br><span class="line">	lat target &#x3D; &#123;&#125;;</span><br><span class="line">	target.__proto__ &#x3D; func.prototype;</span><br><span class="line">	let res &#x3D; func.call(target);</span><br><span class="line">	if (typeof(res) &#x3D;&#x3D; &quot;object&quot; || typeof(res) &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">	return target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3、如何遍历一个dom树"><a href="#3、如何遍历一个dom树" class="headerlink" title="3、如何遍历一个dom树"></a>3、如何遍历一个dom树</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function traversal(node) &#123;</span><br><span class="line">    &#x2F;&#x2F;对node的处理</span><br><span class="line">    if (node &amp;&amp; node.nodeType &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">        console.log(node.tagName);</span><br><span class="line">    &#125;</span><br><span class="line">    var i &#x3D; 0,</span><br><span class="line">        childNodes &#x3D; node.childNodes,</span><br><span class="line">        item;</span><br><span class="line">    for (; i &lt; childNodes.length; i++) &#123;</span><br><span class="line">        item &#x3D; childNodes[i];</span><br><span class="line">        if (item.nodeType &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">            &#x2F;&#x2F;递归先序遍历子节点</span><br><span class="line">            traversal(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="4、讲解一下https对称加密和非对称加密。"><a href="#4、讲解一下https对称加密和非对称加密。" class="headerlink" title="4、讲解一下https对称加密和非对称加密。"></a>4、讲解一下https对称加密和非对称加密。</h4><p>对称加密： 发送方和接收方需要持有同一把密钥，发送消息和接收消息均使用该密钥。相对于非对称加密，对称加密具有更高的加解密速度，但双方都需要事先知道密钥，密钥在传输过程中可能会被窃取，因此安全性没有非对称加密高。</p>
-<p>非对称加密： 接收方在发送消息前需要事先生成公钥和私钥，然后将公钥发送给发送方。发送放收到公钥后，将待发送数据用公钥加密，发送给接收方。接收到收到数据后，用私钥解密。 在这个过程中，公钥负责加密，私钥负责解密，数据在传输过程中即使被截获，攻击者由于没有私钥，因此也无法破解。 非对称加密算法的加解密速度低于对称加密算法，但是安全性更高。</p>
-<h4 id="5、web开发常见的漏洞。"><a href="#5、web开发常见的漏洞。" class="headerlink" title="5、web开发常见的漏洞。"></a>5、web开发常见的漏洞。</h4><p>XSS（跨站脚本攻击）：其原理是攻击者向有XSS漏洞的网站中输入(传入)恶意的HTML代码，当其它用户浏览该网站时，这段HTML代码会自动执行，从而达到攻击的目的。如，盗取用户Cookie、破坏页面结构、重定向到其它网站等。</p>
-<p>SQL注入：用户可以提交一段数据库查询代码，根据程序返回的结果，获得某些他想得知的数据，这就是所谓的SQL Injection，即SQL注入。</p>
-<h4 id="6、HTTP状态码"><a href="#6、HTTP状态码" class="headerlink" title="6、HTTP状态码"></a>6、HTTP状态码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.消息  2.成功 3.重定向 4.请求错误 5.服务器错误</span><br><span class="line"></span><br><span class="line">304：响应禁止包含消息体，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。</span><br><span class="line">305：被请求的资源必须通过指定的代理才能被访问。</span><br><span class="line">400：语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求，或者请求参数有误。</span><br><span class="line">403：服务器已经理解请求，但是拒绝执行它。</span><br><span class="line">404：请求失败，请求所希望得到的资源未被在服务器上发现。</span><br><span class="line">500：服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。</span><br></pre></td></tr></table></figure>
-
-
       
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/03/27/JS-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" class="archive-article-date">
+  	<time datetime="2021-03-27T09:33:33.443Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
+</a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E9%A2%98/day03/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-  
-    <a href="/2021/06/10/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8_%E8%BE%93%E5%85%A5url/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/03/27/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="archive-article-date">
+  	<time datetime="2021-03-27T08:57:38.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-
-
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2021/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -334,8 +234,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

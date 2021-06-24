@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、http的状态码中，499是什么？如何出现499，如何排查跟解决499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：  前端将timeout最大等待时间设置大一些 nginx上配置proxy_ignore_clien">
+  <meta name="description" content="强缓存、协商缓存 1、定义 检查 http header 中是否命中强缓存，有的话，直接从缓存中读取数据。 若 http header 中没有命中强缓存，则浏览器发请求到客户端，客户端再从 http header 中检查是否命中协商缓存。若命中协商缓存，服务器则返回信息，信息为客户端可以直接从缓存中加载资源。 2、介绍 强缓存的两种实现 浏览器第一次发请求到服务器，服务器返回一个response">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E9%A2%98/day03/index.html">
+<meta property="og:url" content="http://example.com/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、http的状态码中，499是什么？如何出现499，如何排查跟解决499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：  前端将timeout最大等待时间设置大一些 nginx上配置proxy_ignore_clien">
+<meta property="og:description" content="强缓存、协商缓存 1、定义 检查 http header 中是否命中强缓存，有的话，直接从缓存中读取数据。 若 http header 中没有命中强缓存，则浏览器发请求到客户端，客户端再从 http header 中检查是否命中协商缓存。若命中协商缓存，服务器则返回信息，信息为客户端可以直接从缓存中加载资源。 2、介绍 强缓存的两种实现 浏览器第一次发请求到服务器，服务器返回一个response">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-15T02:35:21.682Z">
-<meta property="article:modified_time" content="2021-06-07T11:29:44.510Z">
+<meta property="article:published_time" content="2021-06-08T06:18:45.063Z">
+<meta property="article:modified_time" content="2021-06-08T07:26:50.611Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,35 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-面试题/day03" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面试题/浏览器/浏览器缓存" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、http的状态码中，499是什么？如何出现499，如何排查跟解决"><a href="#1、http的状态码中，499是什么？如何出现499，如何排查跟解决" class="headerlink" title="1、http的状态码中，499是什么？如何出现499，如何排查跟解决"></a>1、http的状态码中，499是什么？如何出现499，如何排查跟解决</h4><p>499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。 解决方法：</p>
-<ul>
-<li>前端将timeout最大等待时间设置大一些</li>
-<li>nginx上配置proxy_ignore_client_abort on;</li>
-</ul>
-<h4 id="2、new操作符都做了什么"><a href="#2、new操作符都做了什么" class="headerlink" title="2、new操作符都做了什么"></a>2、new操作符都做了什么</h4><p>四大步骤：</p>
-<p>1、创建一个空对象，并且 this 变量引用该对象，// lat target = {};</p>
-<p>2、继承了函数的原型。// target.<strong>proto</strong> = func.prototype;</p>
-<p>3、属性和方法被加入到 this 引用的对象中。并执行了该函数func// func.call(target);</p>
-<p>4、新创建的对象由 this 所引用，并且最后隐式的返回 this 。// 如果func.call(target)返回的res是个对象或者function 就返回它</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function new(func) &#123;</span><br><span class="line">	lat target &#x3D; &#123;&#125;;</span><br><span class="line">	target.__proto__ &#x3D; func.prototype;</span><br><span class="line">	let res &#x3D; func.call(target);</span><br><span class="line">	if (typeof(res) &#x3D;&#x3D; &quot;object&quot; || typeof(res) &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">	return target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3、如何遍历一个dom树"><a href="#3、如何遍历一个dom树" class="headerlink" title="3、如何遍历一个dom树"></a>3、如何遍历一个dom树</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function traversal(node) &#123;</span><br><span class="line">    &#x2F;&#x2F;对node的处理</span><br><span class="line">    if (node &amp;&amp; node.nodeType &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">        console.log(node.tagName);</span><br><span class="line">    &#125;</span><br><span class="line">    var i &#x3D; 0,</span><br><span class="line">        childNodes &#x3D; node.childNodes,</span><br><span class="line">        item;</span><br><span class="line">    for (; i &lt; childNodes.length; i++) &#123;</span><br><span class="line">        item &#x3D; childNodes[i];</span><br><span class="line">        if (item.nodeType &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">            &#x2F;&#x2F;递归先序遍历子节点</span><br><span class="line">            traversal(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="4、讲解一下https对称加密和非对称加密。"><a href="#4、讲解一下https对称加密和非对称加密。" class="headerlink" title="4、讲解一下https对称加密和非对称加密。"></a>4、讲解一下https对称加密和非对称加密。</h4><p>对称加密： 发送方和接收方需要持有同一把密钥，发送消息和接收消息均使用该密钥。相对于非对称加密，对称加密具有更高的加解密速度，但双方都需要事先知道密钥，密钥在传输过程中可能会被窃取，因此安全性没有非对称加密高。</p>
-<p>非对称加密： 接收方在发送消息前需要事先生成公钥和私钥，然后将公钥发送给发送方。发送放收到公钥后，将待发送数据用公钥加密，发送给接收方。接收到收到数据后，用私钥解密。 在这个过程中，公钥负责加密，私钥负责解密，数据在传输过程中即使被截获，攻击者由于没有私钥，因此也无法破解。 非对称加密算法的加解密速度低于对称加密算法，但是安全性更高。</p>
-<h4 id="5、web开发常见的漏洞。"><a href="#5、web开发常见的漏洞。" class="headerlink" title="5、web开发常见的漏洞。"></a>5、web开发常见的漏洞。</h4><p>XSS（跨站脚本攻击）：其原理是攻击者向有XSS漏洞的网站中输入(传入)恶意的HTML代码，当其它用户浏览该网站时，这段HTML代码会自动执行，从而达到攻击的目的。如，盗取用户Cookie、破坏页面结构、重定向到其它网站等。</p>
-<p>SQL注入：用户可以提交一段数据库查询代码，根据程序返回的结果，获得某些他想得知的数据，这就是所谓的SQL Injection，即SQL注入。</p>
-<h4 id="6、HTTP状态码"><a href="#6、HTTP状态码" class="headerlink" title="6、HTTP状态码"></a>6、HTTP状态码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.消息  2.成功 3.重定向 4.请求错误 5.服务器错误</span><br><span class="line"></span><br><span class="line">304：响应禁止包含消息体，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。</span><br><span class="line">305：被请求的资源必须通过指定的代理才能被访问。</span><br><span class="line">400：语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求，或者请求参数有误。</span><br><span class="line">403：服务器已经理解请求，但是拒绝执行它。</span><br><span class="line">404：请求失败，请求所希望得到的资源未被在服务器上发现。</span><br><span class="line">500：服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。</span><br></pre></td></tr></table></figure>
-
+        <p>强缓存、协商缓存</p>
+<p>1、定义</p>
+<p>检查 http header 中是否命中强缓存，有的话，直接从缓存中读取数据。</p>
+<p>若 http header 中没有命中强缓存，则浏览器发请求到客户端，客户端再从 http header 中检查是否命中协商缓存。若命中协商缓存，服务器则返回信息，信息为客户端可以直接从缓存中加载资源。</p>
+<p>2、介绍</p>
+<p>强缓存的两种实现</p>
+<p>浏览器第一次发请求到服务器，服务器返回一个response header 。response header 返回的信息中会携带expire 和 cache-control 。浏览器会将资源连同该信息缓存下来，方便下次使用。</p>
+<p>1）expire</p>
+<p>​        绝对时间</p>
+<p>2）cache-control</p>
+<p>​        相对时间、优先级高</p>
+<p>​        发请求的时间+有效期间   和   当前时间进行比较</p>
+<p>处理缓存带来的问题</p>
+<p>1.CTRL+F5</p>
+<p>2.加随机数</p>
+<p>强缓存的应用</p>
+<p>前端性能优化、配置静态资源、动态资源就不要配置了。防止更新不及时</p>
+<p>协商缓存</p>
+<p>Last-Modified，If-Modified-Since控制协商缓存</p>
+<p>ETag、If-None-Match控制协商缓存</p>
+<p>第一个参数 记录最后一次修改时间，第二个参数 记录最新一次修改时间。看两者是否一致</p>
+<p>一般都有协商缓存</p>
+<p>浏览器默认缓存图片、css、js 等静态资源</p>
+<p>总结：</p>
+<p>如果资源已经被浏览器缓存下来，在缓存失效之前，再次请求时，默认会先检查是否命中强缓存，如果强缓存命中则直接读取缓存，如果强缓存没有命中则发请求到服务器检查是否命中协商缓存，如果协商缓存命中，则告诉浏览器还是可以从缓存读取，否则才从服务器返回最新的资源。这是默认的处理方式，这个方式可能被浏览器的行为改变：</p>
+<p>当ctrl+f5强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；</p>
+<p>当f5刷新网页时，跳过强缓存，但是会检查协商缓存</p>
 
       
 
@@ -262,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E9%A2%98/day03/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,8 +279,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/TCP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
-    <a href="/2021/06/10/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8_%E8%BE%93%E5%85%A5url/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/day04_%E6%B5%8F%E8%A7%88%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
