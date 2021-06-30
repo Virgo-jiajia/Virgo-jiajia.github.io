@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS-原型链 前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的">
+  <meta name="description" content="JS-原型链前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的 123对象 &#x3D;&gt; __proto__  &#x2F;&amp;#x2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2021/03/28/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS-原型链 前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的">
+<meta property="og:description" content="JS-原型链前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的 123对象 &#x3D;&gt; __proto__  &#x2F;&amp;#x2">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-28T08:08:52.552Z">
-<meta property="article:modified_time" content="2021-03-28T08:08:11.704Z">
+<meta property="article:modified_time" content="2021-06-30T08:50:05.886Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -159,8 +159,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JS-原型链</p>
-<p>前言</p>
+        <h2 id="JS-原型链"><a href="#JS-原型链" class="headerlink" title="JS-原型链"></a>JS-原型链</h2><p>前言</p>
 <p>万物皆对象（除了null）</p>
 <p>对象都有属性，<em>proto</em></p>
 <p>对象的隐式原型 === 构造该对象的原型</p>
@@ -170,6 +169,8 @@
 <p>所有对象都是object的实例</p>
 <p>_proto_是对象专有的</p>
 <p>prototype是函数专有的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象 &#x3D;&gt; __proto__  &#x2F;&#x2F;对象默认有proto属性</span><br><span class="line"></span><br><span class="line">函数 &#x3D;&gt; prototype  &#x2F;&#x2F;函数默认有prototype属性</span><br></pre></td></tr></table></figure>
+
 
       
 
