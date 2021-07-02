@@ -152,6 +152,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-面试题/day02_deep" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>原型链</strong></p>
+<p> <img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210604085934090.png" alt="image-20210604085934090"></p>
+<p>每个对象在其初始化的时候都会有一个属性prototype 当访问对象的属性时，如果在当前对象中找不到该属性就会去原型里面找，而原型也会有原型，就这样一直找下去，就是我们所说的原型链。</p>
+<p>实例的构造函数的原型 === 实例的隐式原型  两者指向同一个地方</p>
+<p>JavaScript对象是通过引用来传递的。会一直检索到object内建对象</p>
+<p><strong>作用域链</strong> </p>
+<p>变量和函数的可访问范围</p>
+<p>函数声明 函数表达式 </p>
+<p>VO variable object 变量对象 == 变量+函数声明</p>
+<p>AO activation object 活动对象 == arguments初始化</p>
+<p>词法作用域 静态的</p>
+<p>栈</p>
+<p>执行上下文===变量对象+作用域链+this</p>
+<p>scope</p>
+<p>声明一个函数的时候会产生作用域{}</p>
+<p><strong>稍后看</strong></p>
+<p><strong>this指向</strong></p>
+<ol>
+<li>在全局作用域中，this-&gt;window</li>
+<li>在普通函数中，this-&gt;谁调用我，我指向谁</li>
+<li>事件绑定中，this-&gt;事件源</li>
+<li>定时器中，this-&gt;window</li>
+<li>构造函数中，this-&gt;实例化对象</li>
+</ol>
+<p><strong>闭包</strong></p>
+<p>特点：现有定义，后实现。</p>
+<p>1、声明一个函数就产生一个闭包，一个闭包内的对象可以互相访问</p>
+<p>一个函数在声明的时候就形成了一个包。然后包内的元素可以互相访问</p>
+<p>2、沿着作用域链往上找，直到找到全局作用域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">&#125;)();</span><br><span class="line">立即执行函数 --闭包和作用域链的产物--</span><br><span class="line">相当于一个隔离区域，形成相互隔离的作用域</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/04/%E9%9D%A2%E8%AF%95%E9%A2%98/day02_deep/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题/day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
