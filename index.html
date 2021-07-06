@@ -354,6 +354,64 @@
 
 
   
+    <article id="post-面试题/JS/节流防抖" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="节流-防抖"><a href="#节流-防抖" class="headerlink" title="节流 防抖"></a>节流 防抖</h2><p>1）定义</p>
+<p>节流throttle：每隔一段时间调用一次函数而不是一触发就调用，减少资源浪费（水管）</p>
+<p>防抖debounce：预测、判断上一个操作是否结束，从而判断是否进行下一个操作</p>
+<p>2）区别</p>
+<p>前提都是某个行为持续触发，不同的是减少次数还是执行一次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">防抖 触发后，等待n秒后不再触发时再执行</span><br><span class="line">function debounce(fn, wait, immediate) &#123;</span><br><span class="line">    let timer &#x3D; null &#x2F;&#x2F;第一次执行</span><br><span class="line"></span><br><span class="line">    return function() &#123;</span><br><span class="line">        let args &#x3D; arguments</span><br><span class="line">        let context &#x3D; this</span><br><span class="line"></span><br><span class="line">        if (immediate &amp;&amp; !timer) &#123; &#x2F;&#x2F;立即执行</span><br><span class="line">            fn.apply(context, args) &#x2F;&#x2F;绑定this，传参</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (timer) clearTimeout(timer) &#x2F;&#x2F;清除时间</span><br><span class="line">        timer &#x3D; setTimeout(() &#x3D;&gt; &#123; &#x2F;&#x2F;重新计时</span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">节流 触发后不立即执行，每隔一段时间后，执行一次</span><br><span class="line">function throttle(fn, wait, immediate) &#123;</span><br><span class="line">    let timer &#x3D; null</span><br><span class="line">    let callNow &#x3D; immediate</span><br><span class="line">    </span><br><span class="line">    return function() &#123;</span><br><span class="line">        let context &#x3D; this,</span><br><span class="line">            args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">        if (callNow) &#123; &#x2F;&#x2F;立即执行</span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">            callNow &#x3D; false</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (!timer) &#123; &#x2F;&#x2F;timer为null</span><br><span class="line">            timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">                fn.apply(context, args)</span><br><span class="line">                timer &#x3D; null</span><br><span class="line">            &#125;, wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/25/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题/day03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -790,177 +848,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/day04_%E6%B5%8F%E8%A7%88%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面试题/day02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p><strong>1、从 URL 输入到页面展现背后发生了什么事？</strong></p>
-</li>
-<li><p>DNS 解析:将域名解析成 IP 地址</p>
-</li>
-<li><p>TCP 连接：TCP 三次握手</p>
-</li>
-<li><p>发送 HTTP 请求</p>
-</li>
-<li><p>服务器处理请求并返回 HTTP 报文</p>
-</li>
-<li><p>浏览器解析渲染页面</p>
-</li>
-<li><p>断开连接：TCP 四次挥手</p>
-</li>
-</ul>
-<ul>
-<li><p><strong>2、浏览器是如何渲染页面的？</strong></p>
-</li>
-<li><p>根据 HTML 解析出 DOM 树</p>
-</li>
-<li><p>根据 CSS 解析生成 CSS 规则树</p>
-</li>
-<li><p>结合 DOM 树和 CSS 规则树，生成渲染树</p>
-</li>
-<li><p>根据渲染树计算每一个节点的信息</p>
-</li>
-<li><p>根据计算好的信息绘制页面</p>
-<p><img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210604144850699.png" alt="image-20210604144850699"></p>
-</li>
-</ul>
-<p>DNS域名解析过程 </p>
-<p>TCP三次握手、四次挥手</p>
-<p>浏览器渲染页面过程</p>
-<p><strong>3、BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明。</strong></p>
-<p><strong>BFC的定义：</strong></p>
-<ul>
-<li>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
-</ul>
-<p><strong>如何形成：</strong></p>
-<ul>
-<li>根元素</li>
-<li>float属性不为none</li>
-<li>position为absolute或fixed</li>
-<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
-<li>overflow不为visible</li>
-</ul>
-<p><strong>作用：</strong></p>
-<ul>
-<li><p>创建BFC来避免垂直外边距叠加</p>
-</li>
-<li><p>创建BFC来清除浮动</p>
-</li>
-<li><p>创建BFC来实现自适应布局</p>
-</li>
-</ul>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>4、重排和重绘</strong></li>
-</ul>
-<p>1）定义、怎么发生</p>
-<p>重排reflow：页面布局发生改变，元素的位置和尺寸变化了，重新排列元素</p>
-<p>重绘repaint：某些元素外观发生改变，但没有改变布局</p>
-<p>2）两者关系</p>
-<p>重排一定会导致重绘，重绘不一定导致重排。</p>
-<p>3）性能优化</p>
-<p>重排优化</p>
-<ol>
-<li><p>减少重排范围</p>
-<ul>
-<li><p>要改变p的样式，就不要把class加到div上</p>
-</li>
-<li><p>尽量不要使用table布局，可能很小的改动会影响整个table布局</p>
-</li>
-</ul>
-</li>
-<li><p>减少重排次数</p>
-<ul>
-<li><p>样式集中改变，明智做法是更改类名而不是更改样式</p>
-</li>
-<li><p>分离读写操作，放入渲染队列，浏览器会批量执行</p>
-</li>
-<li><p>将DOM离线</p>
-<ul>
-<li>display:none 从dom树中拿走，不会引发重排，大量更改后，再显示出来。只发生一次重排</li>
-<li>visibility:hidden 只重绘</li>
-<li>documentFragment创建一个dom碎片，批量操作dom，再加到文档中，只触发一次重排</li>
-<li>复制节点，在副本上工作，然后替换它</li>
-</ul>
-</li>
-<li><p>使用absolute 或 fixed脱离文档流</p>
-</li>
-<li><p>优化动画</p>
-<ul>
-<li>把动画效果应用到position为absolute或fixed的元素上</li>
-<li>GPU加速 ：Canvas2D，布局合成, CSS3转换（transitions），CSS3 3D变换（transforms），WebGL和视频(video)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p><strong>5、bind</strong></p>
-<p>重定义this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.bind &#x3D; function (context, ...args) &#123;</span><br><span class="line">  context &#x3D; context || window;</span><br><span class="line">  const fnSymbol &#x3D; Symbol(&quot;fn&quot;);</span><br><span class="line">  context[fnSymbol] &#x3D; this;</span><br><span class="line">  </span><br><span class="line">  return function (..._args) &#123;</span><br><span class="line">    args &#x3D; args.concat(_args);</span><br><span class="line">    </span><br><span class="line">    context[fnSymbol](...args);</span><br><span class="line">    delete context[fnSymbol];   </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>6、call</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.call &#x3D; function (context, ...args) &#123;</span><br><span class="line">  context &#x3D; context || window;</span><br><span class="line">  </span><br><span class="line">  const fnSymbol &#x3D; Symbol(&quot;fn&quot;);</span><br><span class="line">  context[fnSymbol] &#x3D; this;</span><br><span class="line">  </span><br><span class="line">  context[fnSymbol](...args);</span><br><span class="line">  delete context[fnSymbol];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>7、apply</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.apply &#x3D; function (context, argsArr) &#123;</span><br><span class="line">  context &#x3D; context || window;</span><br><span class="line">  </span><br><span class="line">  const fnSymbol &#x3D; Symbol(&quot;fn&quot;);</span><br><span class="line">  context[fnSymbol] &#x3D; this;</span><br><span class="line">  </span><br><span class="line">  context[fnSymbol](...argsArr);</span><br><span class="line">  delete context[fnSymbol];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong><em>8、节流 防抖</em></strong></p>
-<p>1）定义</p>
-<p>节流throttle：每隔一段时间调用一次函数而不是一触发就调用，减少资源浪费（水管）</p>
-<p>防抖debounce：预测、判断上一个操作是否结束，从而判断是否进行下一个操作</p>
-<p>2）区别</p>
-<p>前提都是某个行为持续触发，不同的是 是减少次数还是执行一次</p>
-<p><strong>9、闭包</strong></p>
-<p>声明函数时会产生一个包，包内的元素可以相互访问</p>
-<p><strong>10、事件委托</strong></p>
-<p>事件代理 （ Event Delegation ） ，又称之为事件委托。是 JavaScript 中常用的绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是 DOM 元素的事件冒泡。</p>
-<p>使用事件代理的好处是可以提高性能 可以大量节省内存占用，减少事件注册，比如在 table 上代理所有 td 的 click 事件就非常棒可以实现当新增子对象时无需再次对其绑定</p>
-<p>DOM元素</p>
-<p>事件冒泡 往上传递 从当前触发的事件向上传递，依次触发，直到document</p>
-<p>事件捕获 往下传递 从document开始触发，往下传递，直到事件真正的目标为止</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/04/%E9%9D%A2%E8%AF%95%E9%A2%98/day02/">展开全文 >></a>
         </p>
       
 
