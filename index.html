@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-面试题/JS/bind call apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="bind-call-apply"><a href="#bind-call-apply" class="headerlink" title="bind call apply"></a>bind call apply</h2><h4 id="call-与-apply-区别"><a href="#call-与-apply-区别" class="headerlink" title="call 与 apply 区别"></a>call 与 apply 区别</h4><p>call 接受参数列表</p>
+<p>apply 接受参数数组</p>
+<p>function.prototype.call()</p>
+<p>函数调用call</p>
+<p>call()方法在给定一个指定this和参数的情况下，调用某个函数或方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.call2 &#x3D; function(context)&#123;</span><br><span class="line">    context.fn &#x3D; this;&#x2F;&#x2F;谁调用call2函数，this指向谁。函数bar调用call2函数，this指向bar</span><br><span class="line">    context.fn(); &#x2F;&#x2F;将调用call函数的函数赋值给对象的一个属性，执行这个属性并删除</span><br><span class="line">    delete context.fn;&#x2F;&#x2F;实现改变this指向，将this指向变为传进来的对象</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar()&#123;</span><br><span class="line">    console.log(this.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo &#x3D; &#123;</span><br><span class="line">    value:&quot;abc&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar.call2(foo);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">call()</span><br><span class="line"></span><br><span class="line">Function.prototype.call2 &#x3D; function (context) &#123;</span><br><span class="line">    var context &#x3D; context || window;</span><br><span class="line">    context.fn &#x3D; this;</span><br><span class="line"></span><br><span class="line">    var args &#x3D; [];</span><br><span class="line">    for(var i &#x3D; 1, len &#x3D; arguments.length; i &lt; len; i++) &#123;</span><br><span class="line">        args.push(&#39;arguments[&#39; + i + &#39;]&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var result &#x3D; eval(&#39;context.fn(&#39; + args +&#39;)&#39;);</span><br><span class="line"></span><br><span class="line">    delete context.fn</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apply()</span><br><span class="line"></span><br><span class="line">Function.prototype.apply &#x3D; function (context, arr) &#123;</span><br><span class="line">    var context &#x3D; Object(context) || window;</span><br><span class="line">    context.fn &#x3D; this;</span><br><span class="line"></span><br><span class="line">    var result;</span><br><span class="line">    if (!arr) &#123;</span><br><span class="line">        result &#x3D; context.fn();</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        var args &#x3D; [];</span><br><span class="line">        for (var i &#x3D; 0, len &#x3D; arr.length; i &lt; len; i++) &#123;</span><br><span class="line">            args.push(&#39;arr[&#39; + i + &#39;]&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">        result &#x3D; eval(&#39;context.fn(&#39; + args + &#39;)&#39;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    delete context.fn</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>bind() 方法会创建一个<strong>新函数</strong>。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。</p>
+<p>主要思路：将调用bind函数的函数 === 对象的属性。</p>
+<p>不同：</p>
+<p>call  参数列表</p>
+<p>apply 参数数组</p>
+<p>bind 返回一个新函数</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/12/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/bind%20call%20apply/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题/JS/拖拽" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -785,69 +851,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面试题/浏览器/day04_浏览器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器缓存</p>
-<p>DNS、tcp三次握手、四次挥手、网络</p>
-<p>浏览器缓存机制</p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI5MjU0Mjk5MA==&amp;mid=2247483826&amp;idx=2&amp;sn=e38f5e5b928a6aa5c15371505b4e8d71&amp;chksm=ec7e8ed3db0907c545393ea90ee8bfd7dc944ff013957228b200d66929767251b1982340d036&amp;token=1895398626&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=MzI5MjU0Mjk5MA==&amp;mid=2247483826&amp;idx=2&amp;sn=e38f5e5b928a6aa5c15371505b4e8d71&amp;chksm=ec7e8ed3db0907c545393ea90ee8bfd7dc944ff013957228b200d66929767251b1982340d036&amp;token=1895398626&amp;lang=zh_CN#rd</a></p>
-<p>浏览器渲染原理</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5c35cf62f265da615e05a67d">https://juejin.im/post/5c35cf62f265da615e05a67d</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5c354b656fb9a049e553ce68">https://juejin.im/post/5c354b656fb9a049e553ce68</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/soyxiaobi/p/9963019.html">https://www.cnblogs.com/soyxiaobi/p/9963019.html</a></p>
-<p>网络TCP/IP</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903459259416589">https://juejin.cn/post/6844903459259416589</a></p>
-<p>网络HTTP</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903459662069773">https://juejin.cn/post/6844903459662069773</a></p>
-<p>浏览器+网络</p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903776512393224#heading-37">https://juejin.cn/post/6844903776512393224#heading-37</a></p>
-<p>安全</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/lgwebdream/FE-Interview/issues/16">https://github.com/lgwebdream/FE-Interview/issues/16</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/08/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%B5%8F%E8%A7%88%E5%99%A8/day04_%E6%B5%8F%E8%A7%88%E5%99%A8/">展开全文 >></a>
         </p>
       
 
