@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS-深浅拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-深浅拷贝"><a href="#JS-深浅拷贝" class="headerlink" title="JS-深浅拷贝"></a>JS-深浅拷贝</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><h5 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h5><p>​    1.基本数据类型</p>
+<p>​        Number、String、Boolean、Null、Undefined、新增 Symbol、bigInt</p>
+<p>​    2.引用数据类型</p>
+<p>​        Object(Array)</p>
+<p>​    <em>基本数据类型和引用地址都是在栈里，引用地址对应是数据放在堆里。深浅拷贝是对与引用数据类型来说的</em></p>
+<h5 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h5><p>​    1.理解：只复制引用地址，不复制值。2个引用地址指向同一个堆。</p>
+<p>​    2.特点：原数据改变，拷贝数据也跟着改变。</p>
+<h5 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h5><p>​    1.理解：不仅复制引用，也复制值。相当于创造了一个新的对象。</p>
+<p>​    2.特点：原数据改变对拷贝数据没有影响。</p>
+<h5 id="实现深拷贝的方法"><a href="#实现深拷贝的方法" class="headerlink" title="实现深拷贝的方法"></a>实现深拷贝的方法</h5><h6 id="方法一：JSON"><a href="#方法一：JSON" class="headerlink" title="方法一：JSON"></a>方法一：JSON</h6><p>​        JSON.parse 将json数据转化成string字符串</p>
+<p>​        JSON.stringify 将string字符串转化成json数据</p>
+<p>​        实现：JSON.parse(JSON.stringify(originArray))</p>
+<p>​        缺点：undefined、function、symbol 会在转换过程中被忽略。。。</p>
+<h6 id="方法二：递归赋值"><a href="#方法二：递归赋值" class="headerlink" title="方法二：递归赋值"></a>方法二：递归赋值</h6><h6 id="方法三：concat、slice"><a href="#方法三：concat、slice" class="headerlink" title="方法三：concat、slice"></a>方法三：concat、slice</h6><p>​        只对第一层数据实现深拷贝</p>
+<h6 id="方法四：…运算符"><a href="#方法四：…运算符" class="headerlink" title="方法四：…运算符"></a>方法四：…运算符</h6><p>​        实现的是对象第一层的深拷贝，后面只是拷贝的引用值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/27/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
