@@ -152,6 +152,64 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-面试题/JS/节流防抖" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="节流-防抖"><a href="#节流-防抖" class="headerlink" title="节流 防抖"></a>节流 防抖</h2><p>1）定义</p>
+<p>节流throttle：每隔一段时间调用一次函数而不是一触发就调用，减少资源浪费（水管）</p>
+<p>防抖debounce：预测、判断上一个操作是否结束，从而判断是否进行下一个操作</p>
+<p>2）区别</p>
+<p>前提都是某个行为持续触发，不同的是减少次数还是执行一次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">防抖 触发后，等待n秒后不再触发时再执行</span><br><span class="line">function debounce(fn, wait, immediate) &#123;</span><br><span class="line">    let timer &#x3D; null &#x2F;&#x2F;第一次执行</span><br><span class="line"></span><br><span class="line">    return function() &#123;</span><br><span class="line">        let args &#x3D; arguments</span><br><span class="line">        let context &#x3D; this</span><br><span class="line"></span><br><span class="line">        if (immediate &amp;&amp; !timer) &#123; &#x2F;&#x2F;立即执行</span><br><span class="line">            fn.apply(context, args) &#x2F;&#x2F;绑定this，传参</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (timer) clearTimeout(timer) &#x2F;&#x2F;清除时间</span><br><span class="line">        timer &#x3D; setTimeout(() &#x3D;&gt; &#123; &#x2F;&#x2F;重新计时</span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">节流 触发后不立即执行，每隔一段时间后，执行一次</span><br><span class="line">function throttle(fn, wait, immediate) &#123;</span><br><span class="line">    let timer &#x3D; null</span><br><span class="line">    let callNow &#x3D; immediate</span><br><span class="line">    </span><br><span class="line">    return function() &#123;</span><br><span class="line">        let context &#x3D; this,</span><br><span class="line">            args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">        if (callNow) &#123; &#x2F;&#x2F;立即执行</span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">            callNow &#x3D; false</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (!timer) &#123; &#x2F;&#x2F;timer为null</span><br><span class="line">            timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">                fn.apply(context, args)</span><br><span class="line">                timer &#x3D; null</span><br><span class="line">            &#125;, wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/25/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题/day03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -962,65 +1020,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/06/03/%E9%9D%A2%E8%AF%95%E9%A2%98/day01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS-原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-原型链"><a href="#JS-原型链" class="headerlink" title="JS-原型链"></a>JS-原型链</h2><p>前言</p>
-<p>万物皆对象（除了null）</p>
-<p>对象都有属性，<em>proto</em></p>
-<p>对象的隐式原型 === 构造该对象的原型</p>
-<p>作用：公用属性和方法，节省资源</p>
-<p>Object.prototype 是原型链的顶层</p>
-<p>所有函数都是function的实例</p>
-<p>所有对象都是object的实例</p>
-<p>_proto_是对象专有的</p>
-<p>prototype是函数专有的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象 &#x3D;&gt; __proto__  &#x2F;&#x2F;对象默认有proto属性</span><br><span class="line"></span><br><span class="line">函数 &#x3D;&gt; prototype  &#x2F;&#x2F;函数默认有prototype属性</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/28/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/">展开全文 >></a>
         </p>
       
 

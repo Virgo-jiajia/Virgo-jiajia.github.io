@@ -8,11 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="路径 url 协议 + 域名 + 路径  localhost &#x3D; 127.0.0.1  域名—ip地址  ..&#x2F; 两个点 上一层  .&#x2F; 一个点 当前目录  &#x2F; 根目录  同一级 直接写文件名   语义化标签 title 搜索标题  h1权重高于h2  main 主标签  header 头部，某一块区域的头；有很多区域，都有头  footer 尾部  nav 导航  article 独立的内容区域">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:url" content="http://example.com/2021/07/23/HTML/html/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="路径 url 协议 + 域名 + 路径  localhost &#x3D; 127.0.0.1  域名—ip地址  ..&#x2F; 两个点 上一层  .&#x2F; 一个点 当前目录  &#x2F; 根目录  同一级 直接写文件名   语义化标签 title 搜索标题  h1权重高于h2  main 主标签  header 头部，某一块区域的头；有很多区域，都有头  footer 尾部  nav 导航  article 独立的内容区域">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-23T09:01:53.878Z">
+<meta property="article:modified_time" content="2021-07-23T09:23:50.001Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,88 +154,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JS-原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-HTML/html" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JS-原型链"><a href="#JS-原型链" class="headerlink" title="JS-原型链"></a>JS-原型链</h2><p>前言</p>
-<p>万物皆对象（除了null）</p>
-<p>对象都有属性，<em>proto</em></p>
-<p>对象的隐式原型 === 构造该对象的原型</p>
-<p>作用：公用属性和方法，节省资源</p>
-<p>Object.prototype 是原型链的顶层</p>
-<p>所有函数都是function的实例</p>
-<p>所有对象都是object的实例</p>
-<p>_proto_是对象专有的</p>
-<p>prototype是函数专有的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象 &#x3D;&gt; __proto__  &#x2F;&#x2F;对象默认有proto属性</span><br><span class="line"></span><br><span class="line">函数 &#x3D;&gt; prototype  &#x2F;&#x2F;函数默认有prototype属性</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/28/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-执行上下文"><a href="#JS-执行上下文" class="headerlink" title="JS-执行上下文"></a>JS-执行上下文</h2><h4 id="创建阶段"><a href="#创建阶段" class="headerlink" title="创建阶段"></a>创建阶段</h4><ul>
-<li>确定this</li>
+        <h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
+<li><p>url 协议 + 域名 + 路径</p>
+</li>
+<li><p>localhost = 127.0.0.1</p>
+</li>
+<li><p>域名—ip地址</p>
+</li>
+<li><p>../ 两个点 上一层</p>
+</li>
+<li><p>./ 一个点 当前目录</p>
+</li>
+<li><p>/ 根目录</p>
+</li>
+<li><p>同一级 直接写文件名</p>
+</li>
 </ul>
-<p>​        是否被引用对象调用？this-&gt;引用对象：this-&gt;window/undefined</p>
+<h3 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h3><ul>
+<li><p>title 搜索标题</p>
+</li>
+<li><p>h1权重高于h2</p>
+</li>
+<li><p>main 主标签</p>
+</li>
+<li><p>header 头部，某一块区域的头；有很多区域，都有头</p>
+</li>
+<li><p>footer 尾部</p>
+</li>
+<li><p>nav 导航</p>
+</li>
+<li><p>article 独立的内容区域</p>
+</li>
+<li><p>section 一块一块的</p>
+</li>
+<li><p>aside 挂件，小部件</p>
+</li>
+</ul>
+<h3 id="文本基本标签"><a href="#文本基本标签" class="headerlink" title="文本基本标签"></a>文本基本标签</h3><ul>
+<li><p>p 段落标签 空格忽视</p>
+</li>
+<li><p>pre 原样格式 空格不忽视</p>
+</li>
+<li><p>hr 线</p>
+</li>
+<li><p>br 换行</p>
+</li>
+<li><p>span </p>
+</li>
+</ul>
+<h3 id="文本描述标签"><a href="#文本描述标签" class="headerlink" title="文本描述标签"></a>文本描述标签</h3><ul>
+<li><p>small 缩小，用于描述声明（语义）</p>
+</li>
+<li><p>time</p>
+</li>
+<li><p>abbr 简写 title 下划线哪里有小点点</p>
+</li>
+<li><p>sub 下标</p>
+</li>
+<li><p>sup 上标</p>
+</li>
+<li><p>del 原价，中划线，不用了</p>
+</li>
+<li><p>ins 现价，下划线</p>
+</li>
+<li><p>s 错误的，中划线</p>
+</li>
+<li><p>code 里面写代码，插件</p>
+</li>
+</ul>
+<h3 id="常用语义标签"><a href="#常用语义标签" class="headerlink" title="常用语义标签"></a>常用语义标签</h3><ul>
+<li><p>progress 进度条 value max</p>
+<p><strong>突出文本</strong></p>
+</li>
+<li><p>strong 强调</p>
+</li>
+<li><p>em 倾斜</p>
+</li>
+<li><p>mark 高亮显示</p>
+</li>
+</ul>
+<hr>
 <ul>
-<li><p>创建词法环境组件[let、const]</p>
-<p>​        <em>创建词法环境组件 == 环境记录+对外部环境引入记录</em></p>
-<p>​        全局词法环境 == 对象式环境记录 + null</p>
-<p>​        函数词法环境 == 声明式环境记录 + outer + arguments对象</p>
+<li><p>cite 小段文本来源</p>
 </li>
-<li><p>创建变量环境组件[var]</p>
+<li><p>blockquote 大段来源引用</p>
+</li>
+<li><p>address 地址</p>
 </li>
 </ul>
-<h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4>
+<p><em>样式无所谓，主要是语义</em></p>
+<h3 id="图像与链接"><a href="#图像与链接" class="headerlink" title="图像与链接"></a>图像与链接</h3><p>图片越小越好，在清晰的情况下</p>
+<p>jpeg === <strong>jpg （首选）大图</strong></p>
+<p>jpeg 压缩</p>
+<p>png 无损压缩，文件大 <strong>小图标–png</strong></p>
+<p>ps 图片 </p>
+<ul>
+<li>jpg无透明 </li>
+<li>png有透明</li>
+</ul>
+<p><strong>iconfont</strong> </p>
+<p><strong>大图 jpg （首选）</strong></p>
+<p><strong>小图标 png</strong></p>
+<p><strong>gif 按需</strong></p>
+<p>静态数据放云上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&quot;</span>/&gt;</span> //title:提示文字 alt图片未加载成功</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#add&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_black&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> //打开一个新标签 target也可以是已经打开的窗口</span><br><span class="line">//href #xxx 跳转，不同页面也可以跳转</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;mailto:2968180159@qq.com&quot;</span>&gt;</span>发送邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span> //不安全</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;tel:222222333&quot;</span>&gt;</span>拨打电话<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">下载文件 浏览器能处理就不麻烦其他人</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="表单与表格"><a href="#表单与表格" class="headerlink" title="表单与表格"></a>表单与表格</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;1.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">legend</span>&gt;</span>fieldset标题<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">lable</span> <span class="attr">for</span>=<span class="string">&quot;title&quot;</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">lable</span>&gt;</span> 表单描述</span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">id</span>=<span class="string">&quot;title&quot;</span>/&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>form</strong></p>
+<ul>
+<li>action 向何处发送表单数据</li>
+<li>method 请求方法</li>
+<li>enctype 发送到服务器之前如何对表单数据进行编码<ul>
+<li>type=”file” 其值为multipart/form-data</li>
+</ul>
+</li>
+</ul>
+<p><strong>fieldset</strong> —将表单中的元素分组</p>
+<p><strong>legend</strong> —为fieldset 元素定义标题</p>
+<p><strong>label</strong> —为input标签定义标注</p>
+<ul>
+<li><p>label中的for属性与相关元素中的id属性一致时，表单会自动获取焦点</p>
+</li>
+<li><p>或者用label包裹相关元素也能起到作用</p>
+</li>
+</ul>
+<p><strong>input</strong></p>
+<ul>
+<li><p>placeholder —提示信息</p>
+</li>
+<li><p><strong>value</strong> —默认值</p>
+</li>
+<li><p><strong>name</strong> —提交到后台</p>
+</li>
+<li><p>size —表单样式长度</p>
+</li>
+<li><p>maxlength —最大字符数量</p>
+</li>
+<li><p>required —是否必须输入</p>
+</li>
+<li><p>readonly —只能读取，能发送</p>
+</li>
+<li><p>disabled —只能看，不能发送</p>
+</li>
+<li><p>pattern —验证</p>
+</li>
+<li><p><strong>type</strong></p>
+<ul>
+<li>password</li>
+<li>email</li>
+<li>url</li>
+<li>tel</li>
+<li>number</li>
+<li>hidden</li>
+<li>radio checked—默认值</li>
+<li>checkbox name=”register[]” —多选</li>
+<li>submit</li>
+<li>search</li>
+<li>file</li>
+<li>date / time / week / mouth / datetime / datetime-local</li>
+</ul>
+</li>
+</ul>
+<h4 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h4><ul>
+<li>button</li>
+<li>input type=”submit” name=”put” value=”保存提交” —name也会传到后台</li>
+</ul>
+<p><strong>textarea</strong></p>
+<p><strong>select</strong> </p>
+<h4 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h4><p>input file</p>
+<ul>
+<li><p>form enctype —设置接收文件的类型</p>
+</li>
+<li><p>accept —严格限制上传类型</p>
+</li>
+</ul>
+<p><strong>多个文件用数组</strong></p>
+<h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>input type</p>
+<ul>
+<li>search </li>
+</ul>
+<p>datalist 数据列表 option</p>
+<p>input-list 与 datalist-id 一致</p>
+<p>autocomplete 历史数据</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>ol 有序列表 start</p>
+<p>ul 无序列表</p>
+<p>dl dt dd 页脚 一组一组的列表</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>table thead tbody tfoot</p>
+<p>tr th td</p>
+<p>caption</p>
+<p>colspan rowspan</p>
+<h3 id="视频播放"><a href="#视频播放" class="headerlink" title="视频播放"></a>视频播放</h3><p>video </p>
+<ul>
+<li>src </li>
+<li>autoplay </li>
+<li>muted </li>
+<li>controls </li>
+<li>poster(封面) </li>
+<li>preload(预加载) </li>
+<li>loop</li>
+</ul>
+<p>source </p>
+<ul>
+<li>src </li>
+<li>type</li>
+</ul>
+<p>声音</p>
+<p>audio 同上</p>
+<h4 id="库"><a href="#库" class="headerlink" title="库"></a>库</h4><ul>
+<li>表单验证</li>
+<li>时间</li>
+<li>视频播放</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -240,16 +405,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/27/JS-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/23/HTML/html/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/22/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -269,216 +493,14 @@
 
 
 
-
-  
-    <article id="post-JS-深浅拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-深浅拷贝"><a href="#JS-深浅拷贝" class="headerlink" title="JS-深浅拷贝"></a>JS-深浅拷贝</h2><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><h5 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h5><p>​    1.基本数据类型</p>
-<p>​        Number、String、Boolean、Null、Undefined、新增 Symbol、bigInt</p>
-<p>​    2.引用数据类型</p>
-<p>​        Object(Array)</p>
-<p>​    <em>基本数据类型和引用地址都是在栈里，引用地址对应是数据放在堆里。深浅拷贝是对与引用数据类型来说的</em></p>
-<h5 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h5><p>​    1.理解：只复制引用地址，不复制值。2个引用地址指向同一个堆。</p>
-<p>​    2.特点：原数据改变，拷贝数据也跟着改变。</p>
-<h5 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h5><p>​    1.理解：不仅复制引用，也复制值。相当于创造了一个新的对象。</p>
-<p>​    2.特点：原数据改变对拷贝数据没有影响。</p>
-<h5 id="实现深拷贝的方法"><a href="#实现深拷贝的方法" class="headerlink" title="实现深拷贝的方法"></a>实现深拷贝的方法</h5><h6 id="方法一：JSON"><a href="#方法一：JSON" class="headerlink" title="方法一：JSON"></a>方法一：JSON</h6><p>​        JSON.parse 将json数据转化成string字符串</p>
-<p>​        JSON.stringify 将string字符串转化成json数据</p>
-<p>​        实现：JSON.parse(JSON.stringify(originArray))</p>
-<p>​        缺点：undefined、function、symbol 会在转换过程中被忽略。。。</p>
-<h6 id="方法二：递归赋值"><a href="#方法二：递归赋值" class="headerlink" title="方法二：递归赋值"></a>方法二：递归赋值</h6><h6 id="方法三：concat、slice"><a href="#方法三：concat、slice" class="headerlink" title="方法三：concat、slice"></a>方法三：concat、slice</h6><p>​        只对第一层数据实现深拷贝</p>
-<h6 id="方法四：…运算符"><a href="#方法四：…运算符" class="headerlink" title="方法四：…运算符"></a>方法四：…运算符</h6><p>​        实现的是对象第一层的深拷贝，后面只是拷贝的引用值。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/27/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-10-18T13:10:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/hello-world/" class="archive-article-date">
-  	<time datetime="2020-10-18T12:49:56.260Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -501,8 +523,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
