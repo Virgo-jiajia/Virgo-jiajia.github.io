@@ -152,6 +152,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS/css1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>内联 外联(head标签里面) 嵌入式</p>
+<p>导入样式 @import url(“ “)</p>
+<h4 id="选择器原理与标签选择器"><a href="#选择器原理与标签选择器" class="headerlink" title="选择器原理与标签选择器"></a>选择器原理与标签选择器</h4><p>h1,h2 逗号，并列关系</p>
+<p>空格 翻译为里边</p>
+<p>大于号 &gt;只有子代</p>
+<p>波浪号 ~兄弟元素</p>
+<p>加号    +近邻的兄弟元素，铁铁们</p>
+<p>id是唯一的，不建议用id来定义样式</p>
+<p>class=”success mb10” 多个样式，通过类重复定义</p>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>h1[title]  属性title 有属性</p>
+<p>h1[title^=”yanju “]  title 属性值以yanju为开始</p>
+<p>h1[title$=”com”]  title 属性值以com为结束</p>
+<p>h1[title*=”com”]  title 属性值 在任何位置出现com都行</p>
+<p>h1[title~=”com”]  title 属性值 com是一个单词，前面后面都是空格</p>
+<p>h1[title|=”com”]  title 属性值 以com开始或者以-（中杠）连接的</p>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p><strong>a</strong></p>
+<p>:link 默认情况下</p>
+<p>:visited 点击之后</p>
+<p>:hover 鼠标放上去</p>
+<p>:active 点击发生的时候</p>
+<p><strong>input</strong></p>
+<p>:focus 获取焦点时</p>
+<p>outline:篮框框 获取焦点时的</p>
+<p>:hover</p>
+<p>:active</p>
+<p><strong>锚点</strong></p>
+<p>div:target 触发锚点 #id</p>
+<p>:root  根标签</p>
+<p>:empty 空标签</p>
+<p><strong>首尾元素伪类选择器</strong></p>
+<p>:first-child 所有元素的第一个子元素</p>
+<p>:last-child </p>
+<p>h1:first-of-type h1类型中第一个子元素 <strong>限制类型</strong></p>
+<p>article&gt;h2:last-of-type article子元素中最后一个h2标签</p>
+<p>:only-child</p>
+<p>:only-of-type</p>
+<p>:nth-child(-n+2) 第一个子代 odd 偶数 even 奇数</p>
+<p>// -n+2 前两个</p>
+<p>h1:nth-of-type(2) 找h1标签的第二个</p>
+<p>:nth-last-child</p>
+<p>前 后 唯一 中间</p>
+<p>:not 排除</p>
+<p>选择器可以嵌套，可以一直往后写</p>
+<h4 id="表单样式"><a href="#表单样式" class="headerlink" title="表单样式"></a>表单样式</h4><p>input:disabled</p>
+<p>input:enabled</p>
+<p>input:checked+label</p>
+<p>input:required  //必填</p>
+<p>input:optional  //非必填</p>
+<p>input:valid  //有效</p>
+<p>input:invalid  //无效</p>
+<h4 id="文本伪类操作"><a href="#文本伪类操作" class="headerlink" title="文本伪类操作"></a>文本伪类操作</h4><p>p::first-letter 第一个字</p>
+<p>p::first-line 第一行</p>
+<p>span::after 在后面加东西</p>
+<p>span::before </p>
+<h2 id="CSS权重"><a href="#CSS权重" class="headerlink" title="CSS权重"></a>CSS权重</h2><table>
+<thead>
+<tr>
+<th>规则</th>
+<th>粒度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>class</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>标签，伪元素</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>*</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>强制最高</td>
+</tr>
+<tr>
+<td>继承</td>
+<td>没有权重、null</td>
+</tr>
+</tbody></table>
+<p>*<em>通配符</em> &gt; 继承，即0 &gt; null**</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/27/CSS/css1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-性能优化/页面优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -997,78 +1135,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/02/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/%E6%8B%96%E6%8B%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面试题/JS/闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h4 id="环境与作用域"><a href="#环境与作用域" class="headerlink" title="环境与作用域"></a>环境与作用域</h4><ul>
-<li>环境是被需要的</li>
-</ul>
-<p><strong>作用域</strong></p>
-<ul>
-<li><p>全局环境不会被回收</p>
-</li>
-<li><p>全局变量函数内部也能访问到</p>
-</li>
-</ul>
-<h4 id="函数环境与作用域"><a href="#函数环境与作用域" class="headerlink" title="函数环境与作用域"></a>函数环境与作用域</h4><p>1、每次调用函数，就产生一个作用域，两次调用同一个函数，产生两个不同的作用域（执行函数，创建空间）</p>
-<p>2、外部函数的作用域包含内部函数，即内部函数可以访问外部变量，但外部函数访问不了内部函数变量</p>
-<p>3、变量和函数在同一级时，当函数被return出来，说明函数还要被用到。那么变量也会被保存，不会销毁。</p>
-<p>内部函数返回后，说明内部函数还要被使用，那么作用域就不会被销毁。那外部函数的作用域就不会被销毁，则外部函数中的变量能继续用。</p>
-<p><strong>是否被外部引用，决定变量是否被销毁（能重复使用，被保留）</strong></p>
-<p>return 返回到外面</p>
-<h4 id="块作用域"><a href="#块作用域" class="headerlink" title="块作用域"></a>块作用域</h4><p>var 没有块级作用域，全局</p>
-<p>const let 有块级作用域</p>
-<h4 id="闭包-1"><a href="#闭包-1" class="headerlink" title="闭包"></a>闭包</h4><p><strong>内部函数可以访问到外部函数中的变量</strong></p>
-<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>this 指向调用函数的对象</p>
-<p>this指向变化 ，解决办法</p>
-<ul>
-<li>赋值给that</li>
-<li>箭头函数</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/29/%E9%9D%A2%E8%AF%95%E9%A2%98/JS/%E9%97%AD%E5%8C%85/">展开全文 >></a>
         </p>
       
 

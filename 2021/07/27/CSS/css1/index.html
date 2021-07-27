@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="css内联 外联(head标签里面) 嵌入式 导入样式 @import url(“ “) 选择器原理与标签选择器h1,h2 逗号，并列关系 空格 翻译为里边 大于号 &gt;只有子代 波浪号 ~兄弟元素 加号    +近邻的兄弟元素，铁铁们 id是唯一的，不建议用id来定义样式 class&#x3D;”success mb10” 多个样式，通过类重复定义 属性选择器h1[title]  属性title 有属">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/page/3/index.html">
+<meta property="og:url" content="http://example.com/2021/07/27/CSS/css1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="css内联 外联(head标签里面) 嵌入式 导入样式 @import url(“ “) 选择器原理与标签选择器h1,h2 逗号，并列关系 空格 翻译为里边 大于号 &gt;只有子代 波浪号 ~兄弟元素 加号    +近邻的兄弟元素，铁铁们 id是唯一的，不建议用id来定义样式 class&#x3D;”success mb10” 多个样式，通过类重复定义 属性选择器h1[title]  属性title 有属">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-27T11:24:53.668Z">
+<meta property="article:modified_time" content="2021-07-27T09:11:59.863Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,130 +154,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CSS/css1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>内联 外联(head标签里面) 嵌入式</p>
+<p>导入样式 @import url(“ “)</p>
+<h4 id="选择器原理与标签选择器"><a href="#选择器原理与标签选择器" class="headerlink" title="选择器原理与标签选择器"></a>选择器原理与标签选择器</h4><p>h1,h2 逗号，并列关系</p>
+<p>空格 翻译为里边</p>
+<p>大于号 &gt;只有子代</p>
+<p>波浪号 ~兄弟元素</p>
+<p>加号    +近邻的兄弟元素，铁铁们</p>
+<p>id是唯一的，不建议用id来定义样式</p>
+<p>class=”success mb10” 多个样式，通过类重复定义</p>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>h1[title]  属性title 有属性</p>
+<p>h1[title^=”yanju “]  title 属性值以yanju为开始</p>
+<p>h1[title$=”com”]  title 属性值以com为结束</p>
+<p>h1[title*=”com”]  title 属性值 在任何位置出现com都行</p>
+<p>h1[title~=”com”]  title 属性值 com是一个单词，前面后面都是空格</p>
+<p>h1[title|=”com”]  title 属性值 以com开始或者以-（中杠）连接的</p>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p><strong>a</strong></p>
+<p>:link 默认情况下</p>
+<p>:visited 点击之后</p>
+<p>:hover 鼠标放上去</p>
+<p>:active 点击发生的时候</p>
+<p><strong>input</strong></p>
+<p>:focus 获取焦点时</p>
+<p>outline:篮框框 获取焦点时的</p>
+<p>:hover</p>
+<p>:active</p>
+<p><strong>锚点</strong></p>
+<p>div:target 触发锚点 #id</p>
+<p>:root  根标签</p>
+<p>:empty 空标签</p>
+<p><strong>首尾元素伪类选择器</strong></p>
+<p>:first-child 所有元素的第一个子元素</p>
+<p>:last-child </p>
+<p>h1:first-of-type h1类型中第一个子元素 <strong>限制类型</strong></p>
+<p>article&gt;h2:last-of-type article子元素中最后一个h2标签</p>
+<p>:only-child</p>
+<p>:only-of-type</p>
+<p>:nth-child(-n+2) 第一个子代 odd 偶数 even 奇数</p>
+<p>// -n+2 前两个</p>
+<p>h1:nth-of-type(2) 找h1标签的第二个</p>
+<p>:nth-last-child</p>
+<p>前 后 唯一 中间</p>
+<p>:not 排除</p>
+<p>选择器可以嵌套，可以一直往后写</p>
+<h4 id="表单样式"><a href="#表单样式" class="headerlink" title="表单样式"></a>表单样式</h4><p>input:disabled</p>
+<p>input:enabled</p>
+<p>input:checked+label</p>
+<p>input:required  //必填</p>
+<p>input:optional  //非必填</p>
+<p>input:valid  //有效</p>
+<p>input:invalid  //无效</p>
+<h4 id="文本伪类操作"><a href="#文本伪类操作" class="headerlink" title="文本伪类操作"></a>文本伪类操作</h4><p>p::first-letter 第一个字</p>
+<p>p::first-line 第一行</p>
+<p>span::after 在后面加东西</p>
+<p>span::before </p>
+<h2 id="CSS权重"><a href="#CSS权重" class="headerlink" title="CSS权重"></a>CSS权重</h2><table>
+<thead>
+<tr>
+<th>规则</th>
+<th>粒度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>class</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>标签，伪元素</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>*</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>强制最高</td>
+</tr>
+<tr>
+<td>继承</td>
+<td>没有权重、null</td>
+</tr>
+</tbody></table>
+<p>*<em>通配符</em> &gt; 继承，即0 &gt; null**</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/04/%E9%9D%A2%E8%AF%95%E9%A2%98/day02_deep/" class="archive-article-date">
-  	<time datetime="2021-06-04T00:52:31.980Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/27/CSS/css1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/03/%E9%9D%A2%E8%AF%95%E9%A2%98/day01/" class="archive-article-date">
-  	<time datetime="2021-06-03T03:44:16.467Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-03</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/28/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="archive-article-date">
-  	<time datetime="2021-03-28T08:08:52.552Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/26/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E9%A1%B5%E9%9D%A2%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/27/JS-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" class="archive-article-date">
-  	<time datetime="2021-03-27T09:33:33.443Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/27/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="archive-article-date">
-  	<time datetime="2021-03-27T08:57:38.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2021/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><a class="page-number" href="/archives/2021/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -297,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
