@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章内容  第二章内容  参考文献www.codesheep.cn">
+  <meta name="description" content="不同浏览器，渲染流程不同 html css js 解析顺序 先解析html，遇到css外链，则下载css，下载后解析css。html解析和css解析可以同时进行，不会相互影响。 但遇到js，则立即下载脚本，并停止解析，直到脚本执行完之后再进行文档的解析。 defer async 异步执行 defer 顺序执行，先加载后执行 async 谁加载快，谁先执行 DNS  网址映射关系 hosts、DNS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8/TCP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章内容  第二章内容  参考文献www.codesheep.cn">
+<meta property="og:description" content="不同浏览器，渲染流程不同 html css js 解析顺序 先解析html，遇到css外链，则下载css，下载后解析css。html解析和css解析可以同时进行，不会相互影响。 但遇到js，则立即下载脚本，并停止解析，直到脚本执行完之后再进行文档的解析。 defer async 异步执行 defer 顺序执行，先加载后执行 async 谁加载快，谁先执行 DNS  网址映射关系 hosts、DNS">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-18T13:10:03.000Z">
-<meta property="article:modified_time" content="2020-10-18T13:14:24.320Z">
+<meta property="og:image" content="c:/Users/郭佳佳/AppData/Roaming/Typora/typora-user-images/image-20210609094105241.png">
+<meta property="og:image" content="c:/Users/郭佳佳/AppData/Roaming/Typora/typora-user-images/image-20210609094200329.png">
+<meta property="article:published_time" content="2021-06-08T07:27:01.816Z">
+<meta property="article:modified_time" content="2021-06-10T01:59:09.079Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/郭佳佳/AppData/Roaming/Typora/typora-user-images/image-20210609094105241.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,31 +157,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-浏览器/TCP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-10-18T13:10:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
+        <p>不同浏览器，渲染流程不同</p>
+<p>html css js 解析顺序</p>
+<p>先解析html，遇到css外链，则下载css，下载后解析css。html解析和css解析可以同时进行，不会相互影响。</p>
+<p>但遇到js，则立即下载脚本，并停止解析，直到脚本执行完之后再进行文档的解析。</p>
+<p>defer async 异步执行</p>
+<p>defer 顺序执行，先加载后执行</p>
+<p>async 谁加载快，谁先执行</p>
+<p>DNS  网址映射关系</p>
+<p>hosts、DNS解析器、DNS服务器</p>
+<p>递归  客户端和本地DNS服务器</p>
+<p>迭代  DNS服务器之间</p>
+<p>TCP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SYN	表示建立连接</span><br><span class="line">FIN	表示关闭连接</span><br><span class="line">ACK	表示响应</span><br><span class="line">PSH 表示有DATA数据传输</span><br><span class="line">RST	表示连接重置</span><br></pre></td></tr></table></figure>
+
+
+
+<p>TCP三次握手</p>
+<p>B是客户端，A是服务器</p>
+<p>B–&gt;SYN=1,Seq=x–&gt;A</p>
+<p>A–&gt;SYN=1,ACK=x+1,Seq=y–&gt;B</p>
+<p>B–&gt;ACK=y+1,Seq=z–&gt;A</p>
+<p><img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210609094105241.png" alt="image-20210609094105241"></p>
+<p>TCP四次挥手</p>
+<ol>
+<li>主机A–&gt;FIN–&gt;主机B</li>
+<li>B–&gt;ACK–&gt;A</li>
+<li>B–&gt;FIN,ACK–&gt;A</li>
+<li>A–&gt;ACK–&gt;B</li>
+</ol>
+<p><img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210609094200329.png" alt="image-20210609094200329"></p>
 
       
 
@@ -258,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8/TCP/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,7 +285,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/27/JS/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8_%E8%A1%A5%E5%85%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -282,8 +295,8 @@
     </a>
   
   
-    <a href="/2020/10/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章内容  第二章内容  参考文献www.codesheep.cn">
+  <meta name="description" content="JS-原型链前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的 123对象 &#x3D;&gt; __proto__  &#x2F;&amp;#x2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/03/28/JS/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章内容  第二章内容  参考文献www.codesheep.cn">
+<meta property="og:description" content="JS-原型链前言 万物皆对象（除了null） 对象都有属性，proto 对象的隐式原型 &#x3D;&#x3D;&#x3D; 构造该对象的原型 作用：公用属性和方法，节省资源 Object.prototype 是原型链的顶层 所有函数都是function的实例 所有对象都是object的实例 _proto_是对象专有的 prototype是函数专有的 123对象 &#x3D;&gt; __proto__  &#x2F;&amp;#x2">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-18T13:10:03.000Z">
-<meta property="article:modified_time" content="2020-10-18T13:14:24.320Z">
+<meta property="article:published_time" content="2021-03-28T08:08:52.552Z">
+<meta property="article:modified_time" content="2021-06-30T08:50:05.886Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,31 +154,23 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS/JS-原型链" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章
-    </h1>
-  
-
-        
-        <a href="/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-10-18T13:10:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
+        <h2 id="JS-原型链"><a href="#JS-原型链" class="headerlink" title="JS-原型链"></a>JS-原型链</h2><p>前言</p>
+<p>万物皆对象（除了null）</p>
+<p>对象都有属性，<em>proto</em></p>
+<p>对象的隐式原型 === 构造该对象的原型</p>
+<p>作用：公用属性和方法，节省资源</p>
+<p>Object.prototype 是原型链的顶层</p>
+<p>所有函数都是function的实例</p>
+<p>所有对象都是object的实例</p>
+<p>_proto_是对象专有的</p>
+<p>prototype是函数专有的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象 &#x3D;&gt; __proto__  &#x2F;&#x2F;对象默认有proto属性</span><br><span class="line"></span><br><span class="line">函数 &#x3D;&gt; prototype  &#x2F;&#x2F;函数默认有prototype属性</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -258,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/28/JS/JS-%E5%8E%9F%E5%9E%8B%E9%93%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,7 +264,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/27/JS/JS-%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/03/%E9%9D%A2%E8%AF%95%E9%A2%98/day01/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -282,8 +274,8 @@
     </a>
   
   
-    <a href="/2020/10/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/03/27/JS/JS-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
