@@ -152,6 +152,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS/原型和继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原型和继承"><a href="#原型和继承" class="headerlink" title="原型和继承"></a>原型和继承</h2><p>原型的初步认识</p>
+<p><strong>proto</strong>  长辈 原型链 </p>
+<p>arr.<strong>proto</strong> =&gt; Array.prototype =&gt; Object.prototype</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.create(null,&#123;&#125;) &#x2F;&#x2F;没有原型的对象</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对象 =&gt; <strong>proto</strong>  //对象默认有proto属性</p>
+<p>函数 =&gt; prototype  //函数默认有prototype属性</p>
+<p>函数同时也是对象 也就是说，它既有prototype属性也有__proto__属性</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>String Number Object  =&gt;  new</p>
+<p>setPrototypeOf(a,b) //设置b是a的父亲</p>
+<p>getPrototypeOf(a) //获取a的原型</p>
+<h4 id="原型检测方法"><a href="#原型检测方法" class="headerlink" title="原型检测方法"></a>原型检测方法</h4><ul>
+<li>instanceOf</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a instanceOf b   检测a原型链上是否有b</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Object.isPrototypeOf</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.isPrototypeOf(b)  b是不是在a的原型链上</span><br><span class="line"><span class="built_in">Object</span>.prototype.isPrototypeOf()</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="属性检测"><a href="#属性检测" class="headerlink" title="属性检测"></a>属性检测</h4><ul>
+<li><p>in</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;name&quot; in a &#x2F;&#x2F;会攀升原型链，不光检测a中是否含有该属性，还会检测a的原型链上是否有</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name:<span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  age:<span class="number">21</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  name:<span class="string">&quot;Lisa&quot;</span>,</span><br><span class="line">  grade:<span class="number">90</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.__proto__ =o;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">var</span> i <span class="keyword">in</span> obj</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>hasOwnPrototype</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.hasOwnProperty(&#39;name&#39;) &#x2F;&#x2F;不会攀升原型链</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="apply-call-–借用方法"><a href="#apply-call-–借用方法" class="headerlink" title="apply call –借用方法"></a>apply call –借用方法</h4><p>当自己一族没有方法，就借用其他人的方法。使用 apply 和 call 实现</p>
+<ul>
+<li><p>call 参数列表</p>
+</li>
+<li><p>apply 参数数组</p>
+</li>
+<li><p>总之数组用apply</p>
+</li>
+<li><p>…arr 可以展开数组，那么就可以用call</p>
+</li>
+</ul>
+<h4 id="Object-create-与-proto"><a href="#Object-create-与-proto" class="headerlink" title="Object.create 与 proto"></a>Object.create 与 proto</h4><p>作用：创建一个新对象，带着指定的原型对象和属性。</p>
+<p><strong>proto</strong> 是浏览器厂商自主研发的,不是官方的</p>
+<p>Object.create 不能获取</p>
+<p>用setPrototypeOf、getPrototypeOf 替换 <strong>proto</strong></p>
+<p><strong>proto</strong> 实际上是get set</p>
+<h4 id="继承是原型的继承，不是改变构造函数的原型。"><a href="#继承是原型的继承，不是改变构造函数的原型。" class="headerlink" title="继承是原型的继承，不是改变构造函数的原型。"></a>继承是原型的继承，不是改变构造函数的原型。</h4><p>继承的同时还有自己的原型</p>
+<p>继承就是成为别人的儿子？！！</p>
+<p>把一个对象的原型指向另一个对象</p>
+<p>Object.create() 也可以实现继承</p>
+<p>**<code>Object.create()</code>**方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Admin</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> Admin();</span><br><span class="line">Admin.prototype = <span class="built_in">Object</span>.create(User.prototype);</span><br><span class="line"><span class="comment">//创造一个新对象，指向User.prototype</span></span><br><span class="line"><span class="comment">//但是实例a还是指向Admin.prototype</span></span><br><span class="line">Admin.prototype.role = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;role&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">a.role(); <span class="comment">//报错，实例a的原型还是指向Admin.prototype</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>constructor 不可遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br><span class="line"><span class="comment">//继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">sub,sup</span>)</span>&#123;</span><br><span class="line">        sub.prototype = <span class="built_in">Object</span>.create(sup.prototype);</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(sub.prototype,<span class="string">&quot;constructor&quot;</span>,&#123;</span><br><span class="line">            value:sub,</span><br><span class="line">            enumerator:<span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>用该方法设置constructor的属性，使其不可遍历</p>
+<h4 id="子类用父类方法—-重写"><a href="#子类用父类方法—-重写" class="headerlink" title="子类用父类方法—-重写"></a>子类用父类方法—-重写</h4><p>Admin.prototype.show(子) 与 User.prototype.show(父)</p>
+<p>User.prototype.site() //调用父类方法</p>
+<p><strong>多态</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">父：User show() <span class="keyword">return</span> <span class="built_in">this</span>.des</span><br><span class="line"></span><br><span class="line">子：Admin Menber Enterpise</span><br><span class="line"></span><br><span class="line">Admin.prototype.des = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="string">&#x27;管理员&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>多继承</strong></p>
+<p>要想实现继承，在原型链上不断加原型实现继承，该方法不对</p>
+<p><strong>mixin 实现多继承</strong></p>
+<p>将方法变成对象、压入原型</p>
+<p>原型就是对象，往对象中加属性</p>
+<p>36重刷</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/17/JS/%E5%8E%9F%E5%9E%8B%E5%92%8C%E7%BB%A7%E6%89%BF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1081,79 +1213,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/14/JS/%E6%89%8B%E5%86%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS/圣杯布局与双飞翼布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;middle&quot;</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、<span class="selector-tag">middle</span>、<span class="selector-tag">left</span>、<span class="selector-tag">right</span> <span class="selector-tag">float</span><span class="selector-pseudo">:left</span></span><br><span class="line">2、<span class="selector-tag">left</span> <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-100</span>%</span><br><span class="line">   <span class="selector-tag">right</span> <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-(</span>自身宽度)<span class="selector-tag">px</span></span><br><span class="line">3、<span class="selector-tag">left</span> <span class="selector-tag">right</span> 设置<span class="selector-tag">postition</span><span class="selector-pseudo">:relative</span></span><br><span class="line">   <span class="selector-tag">container</span> 设置<span class="selector-tag">padding</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;middle&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;inner_middle&quot;</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、<span class="selector-tag">middle</span>、<span class="selector-tag">left</span>、<span class="selector-tag">right</span> <span class="selector-tag">float</span><span class="selector-pseudo">:left</span></span><br><span class="line">2、<span class="selector-tag">left</span> <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-100</span>%</span><br><span class="line">   <span class="selector-tag">right</span> <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-(</span>自身宽度)<span class="selector-tag">px</span></span><br><span class="line">3、<span class="selector-tag">inner_middle</span> 设置<span class="selector-tag">margin</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
-<li>都飘起来</li>
-<li>成一行，排好序</li>
-<li>不覆盖middle<ul>
-<li>圣杯  padding+relative</li>
-<li>双飞翼  内部div 设置margin</li>
-</ul>
-</li>
-</ul>
-<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p><strong>margin</strong></p>
-<p><img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210713151959554.png" alt="image-20210713151959554"></p>
-<p><strong>position:relative</strong></p>
-<p>相对于其自身位置进行移动</p>
-<p><img src="C:\Users\郭佳佳\AppData\Roaming\Typora\typora-user-images\image-20210713152320486.png" alt="image-20210713152320486"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/13/CSS/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E4%B8%8E%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80/">展开全文 >></a>
         </p>
       
 
