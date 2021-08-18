@@ -152,6 +152,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JS/Array" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h4><h5 id="前后"><a href="#前后" class="headerlink" title="前后"></a>前后</h5><p>pop 弹出最后一个</p>
+<p>push 从后面加入</p>
+<p>unshift 从前面压入一个</p>
+<p>shift 从前面移除</p>
+<p>fill 填充</p>
+<h5 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h5><p>slice 对原数组没有改变 <strong>包括begin，不包括end</strong></p>
+<p>slice(开始下标，结束下标)</p>
+<p>slice() 得到一个新数组</p>
+<p>splice() 对原数组有改变</p>
+<p>splice(开始下标，截取数量) //删</p>
+<p>splice(开始下标，截取数量，添加的元素) //替换，增加</p>
+<h4 id="清空数组"><a href="#清空数组" class="headerlink" title="清空数组"></a>清空数组</h4><p>arr = [] 指向一个新的空数组</p>
+<p>arr.length = 0 清空原数组 （<strong>推荐</strong>）</p>
+<p>while(arr.pop()){}</p>
+<p>arr.splice(0) / arr.splice(0,arr.length)</p>
+<h4 id="拆分和合并"><a href="#拆分和合并" class="headerlink" title="拆分和合并"></a>拆分和合并</h4><p>split <strong>字符串</strong>的属性，使用之后得到的结果是<strong>数组</strong></p>
+<p>join 数组合并</p>
+<p>concat … 数组合并</p>
+<p>copyWithin</p>
+<h4 id="数组查找"><a href="#数组查找" class="headerlink" title="数组查找"></a>数组查找</h4><ul>
+<li>indexOf         //严格匹配，-1表示没找到</li>
+<li>lastIndexOf</li>
+<li>includes     //返回布尔类型的值</li>
+<li>find            //引用类型，返回值</li>
+<li>findIndex  //返回索引</li>
+</ul>
+<h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><ul>
+<li>sort(a,b) <ul>
+<li>a-b 从小到大</li>
+<li>b-a 从大到小</li>
+</ul>
+</li>
+</ul>
+<h4 id="循环操作"><a href="#循环操作" class="headerlink" title="循环操作"></a>循环操作</h4><ul>
+<li><p>for</p>
+</li>
+<li><p>for of </p>
+<ul>
+<li><p>值类型，新开辟一块空间，不会改变原来的值</p>
+<p>引用类型，会改变原来的值</p>
+</li>
+</ul>
+</li>
+<li><p>for in</p>
+</li>
+<li><p>forEach </p>
+</li>
+</ul>
+<p>substr 截取，类似于slice</p>
+<p>toggle 切换hide和show</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/18/JS/Array/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JS/原型和继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1179,72 +1276,9 @@
 
 
   
-    <article id="post-JS/手写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//防抖 触发后，等待n秒后不再触发时再执行</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, wait, immediate</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span> <span class="comment">//第一次执行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> args = <span class="built_in">arguments</span></span><br><span class="line">        <span class="keyword">let</span> context = <span class="built_in">this</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (immediate &amp;&amp; !timer) &#123; <span class="comment">//立即执行</span></span><br><span class="line">            fn.apply(context, args) <span class="comment">//绑定this，传参</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timer) <span class="built_in">clearTimeout</span>(timer) <span class="comment">//清除时间</span></span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">//重新计时</span></span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">节流 触发后不立即执行，每隔一段时间后，执行一次</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, wait, immediate</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">let</span> callNow = immediate</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> context = <span class="built_in">this</span>,</span><br><span class="line">            args = <span class="built_in">arguments</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (callNow) &#123; <span class="comment">//立即执行</span></span><br><span class="line">            fn.apply(context, args)</span><br><span class="line">            callNow = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!timer) &#123; <span class="comment">//timer为null</span></span><br><span class="line">            timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                fn.apply(context, args)</span><br><span class="line">                timer = <span class="literal">null</span></span><br><span class="line">            &#125;, wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">call()</span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span>;</span><br><span class="line">    context.fn = <span class="built_in">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> args = [];</span><br><span class="line">    <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">var</span> i = <span class="number">1</span>, len = <span class="built_in">arguments</span>.length; i &lt; len; i++</span>)</span> &#123;</span><br><span class="line">        args.push(<span class="string">&#x27;arguments[&#x27;</span> + i + <span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn(&#x27;</span> + args +<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apply()</span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.apply = <span class="function"><span class="keyword">function</span> (<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = <span class="built_in">Object</span>(context) || <span class="built_in">window</span>;</span><br><span class="line">    context.fn = <span class="built_in">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result;</span><br><span class="line">    <span class="keyword">if</span> (!arr) &#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> args = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">            args.push(<span class="string">&#x27;arr[&#x27;</span> + i + <span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="built_in">eval</span>(<span class="string">&#x27;context.fn(&#x27;</span> + args + <span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">instanceof</span> <span class="comment">//判断构造函数的prototype属性是否存在于实例对象的原型链上</span></span><br><span class="line">object <span class="keyword">instanceof</span> <span class="title">constructor</span></span><br><span class="line"></span><br><span class="line"><span class="title">function</span> <span class="title">instanceOf</span>(<span class="params">left,right</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> leftValue = left.__proto__;</span><br><span class="line">    <span class="keyword">let</span> rightValue = right.prototype;</span><br><span class="line">	<span class="function"><span class="title">while</span>(<span class="params"><span class="literal">true</span></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">leftValue === <span class="literal">null</span></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">leftValue === rightValue</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        leftValue = leftValue.__proto__;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">instanceOf([],<span class="built_in">Array</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create <span class="comment">//创造一个新对象，使用现有对象来提供新对象的__proto__</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObject</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">        F.prototype = obj;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 干了什么</span><br><span class="line"><span class="number">1</span> 创建一个空对象</span><br><span class="line"><span class="number">2</span> 将对象的隐式原型指向构造函数的原型</span><br><span class="line"><span class="number">3</span> 改变<span class="built_in">this</span>指向 </span><br><span class="line"><span class="number">4</span> 传递参数</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObject</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;	<span class="comment">//4</span></span><br><span class="line">        <span class="keyword">var</span> obj = &#123;&#125;;	<span class="comment">//1</span></span><br><span class="line">        obj.__proto__ = c.prototype;	<span class="comment">//2</span></span><br><span class="line">        c.call(obj,...arguments);	<span class="comment">//3</span></span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Person(<span class="string">&#x27;tom&#x27;</span>,<span class="number">18</span>);</span><br><span class="line"><span class="keyword">let</span> p1 = createObject(Person)(<span class="string">&#x27;lisa&#x27;</span>,<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p);</span><br><span class="line"><span class="built_in">console</span>.log(p1);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">深浅拷贝</span><br><span class="line">浅拷贝，如果数组中包含数组或对象。对数组进行改变，原来的数据也会改变。拷贝的不彻底</span><br><span class="line"><span class="built_in">Array</span>.prototype.concat() <span class="comment">//合并数组，返回一个新数组，对原数组没有影响</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice() <span class="comment">//返回一个新数组对象，begin end。什么参数都不传，相当于复制</span></span><br><span class="line"></span><br><span class="line">深拷贝，完全生成一个新对象。对新对象进行改变，原来的数据不会改变</span><br><span class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr))</span><br><span class="line"></span><br><span class="line"><span class="comment">//浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> shallowCopy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 只拷贝对象</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">&#x27;object&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 根据obj的类型判断是新建一个数组还是对象</span></span><br><span class="line">    <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="comment">// 遍历obj，并且判断是obj的属性才拷贝</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//深拷贝</span></span><br><span class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">&#x27;object&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> newObj = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            newObj[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">&#x27;object&#x27;</span> ? deepCopy(obj[key]) : obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/14/JS/%E6%89%8B%E5%86%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
